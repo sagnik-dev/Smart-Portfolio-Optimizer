@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Investment Optimizer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">📈 Stock Optimizer</div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Smart Portfolio Optimizer</h1>
+            <p>Maximize your returns with AI-inspired <b>Fractional Knapsack Algorithm</b></p>
+        </section>
+
+        <section class="input-section">
+            <div class="input-card">
+                <label for="budget">💰 Investment Budget ($)</label>
+                <input type="number" id="budget" placeholder="Enter your budget (e.g. 5000)" />
+
+                <label for="data">📊 Upload Stock Data (optional CSV)</label>
+                <input type="file" id="data" accept=".csv" />
+
+                <button id="run-btn" onclick="optimizePortfolio()">Optimize Portfolio</button>
+            </div>
+        </section>
+
+        <section id="results" class="hidden">
+            <div class="summary">
+                <div class="summary-card">
+                    <h3>Total Invested</h3>
+                    <p id="summary-invested">$0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Expected Return</h3>
+                    <p id="summary-return">$0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>ROI</h3>
+                    <p id="summary-roi">0%</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2>📋 Portfolio Breakdown</h2>
+                <table id="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Stock</th>
+                            <th>Price ($)</th>
+                            <th>Fraction</th>
+                            <th>Invested ($)</th>
+                            <th>Expected Return ($)</th>
+                            <th>ROI (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-box">
+                    <h3>Investment Distribution</h3>
+                    <canvas id="investmentChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Expected Returns</h3>
+                    <canvas id="returnChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Sagnik Biswas • Fractional Knapsack Stock Optimizer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
